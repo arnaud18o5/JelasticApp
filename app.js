@@ -35,6 +35,9 @@ app.use(cors())
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: false })) // for parsing application/x-www-form-urlencoded
+app.use('/', (req, res) => {
+  res.send("Hello world!")
+})
 app.use('/cat'/*, passport.authenticate('jwt', {session: false})*/, catRoute);
 app.use('/user', passport.authenticate('jwt', {session: false}), userRoute)
 app.use('/auth', authRoute)
